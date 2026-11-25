@@ -1,0 +1,24 @@
+.productCardContainer{
+  /* border: 1px solid #bebebe; */
+  padding: 15px;
+  border-radius: 12px;
+  background-color: #f3ebed;
+}
+
+.productImg{
+  width: 100%;
+  max-height: 300px;
+  object-fit: fill;
+  box-shadow: 0 0 5px pink;
+  border-radius: 12px;
+  transition: 0.2s;
+}
+
+.productImg:hover{
+  box-shadow: 0 0 5px #ce8a96;
+}
+
+.productTitle{
+  font-family: Fredoka;
+  font-weight: 600;
+}

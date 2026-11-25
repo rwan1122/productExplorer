@@ -16,7 +16,6 @@ function App() {
     const loadProducts = async() => {
       try{
         const data = await fetchProducts();
-        
         if(!ignore){
           setProducts(data.products); 
         }
@@ -70,9 +69,9 @@ function App() {
   };
 
     return (
-      <>
-        <ProductList products={products}/>
-      </>
+      <div className='productListContainer'>
+        <ProductList products={products} />
+      </div>
     )
 }
 
