@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ProductList } from './components/ProductList.jsx';
+import { fetchProducts } from './api/products.js';
 // import { products } from './data/products.js';
 import './App.css';
 
@@ -14,12 +15,8 @@ function App() {
 
     const loadProducts = async() => {
       try{
-        // throw new Error('Temporary error test');
-        const response = await fetch('https://dummyjson.com/products?limit=10');
-        if(!response.ok){
-          throw new Error('Failed to fetch products.')
-        }
-        const data = await response.json();
+        const data = await fetchProducts();
+        
         if(!ignore){
           setProducts(data.products); 
         }
