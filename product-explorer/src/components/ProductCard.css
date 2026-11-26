@@ -1,8 +1,9 @@
 .productCardContainer{
-  /* border: 1px solid #bebebe; */
   padding: 15px;
   border-radius: 12px;
   background-color: #f3ebed;
+  max-width: 350px;
+  margin: 0 auto;
 }
 
 .productImg{

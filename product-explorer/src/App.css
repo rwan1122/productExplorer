@@ -1,7 +1,36 @@
+.searchBoxContainer{
+  width: 70%;
+  margin: 20px auto;
+  display: flex;
+}
+
+.searchInput{
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background-color: #f3ebed;
+  width: 95%;
+  font-size: 17px;
+}
+
+/* .searchBtn{
+  background-color: #bbadb0;
+  border: none ;
+  outline: none ;
+  border-radius: 0 10px 10px 0;
+  cursor: pointer;
+  
+}
+.searchIcon{
+  padding: 7px;
+} */
+
 .productListContainer{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 15px ;
   padding: 15px;
   margin: auto;
+  max-width: 1200px;
 }
