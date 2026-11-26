@@ -71,30 +71,46 @@ function App() {
     );
   };
 
-    return (
-      <div className='appContainer'>
-        <div className='searchBoxContainer'>
-          <input type='text'
-          className='searchInput' 
-          placeholder='Product Name' 
-          value={searchQuery}
-          onChange={(event) => {
-            setSearchQuery(event.target.value)
-          }}
-          />
-          {/* <button type='button' className='searchBtn'>
-            <img src={searchIcon} alt="Search" className='searchIcon'/>
-          </button> */}
-        </div>
+  function filteredProducts(){
+    if(searchQuery === ''){
+      return products;
+    }
 
-        <div className='productListContainer'>
-          <ProductList products= {
-            searchQuery === ''? products:
-            products.filter((product) => product.title.toLocaleLowerCase().includes(searchQuery.trim().toLocaleLowerCase()))} 
-          />
-        </div>
+    const filtProducts = products.filter((product) => product.title.toLocaleLowerCase().includes(searchQuery.trim().toLocaleLowerCase()));
+
+
+    return filtProducts;
+  }
+        
+
+  return (
+    <div className='appContainer'>
+      <div className='searchBoxContainer'>
+        <input type='text'
+        className='searchInput' 
+        placeholder='Product Name' 
+        value={searchQuery}
+        onChange={(event) => {
+          setSearchQuery(event.target.value)
+        }}
+        />
+        {/* <button type='button' className='searchBtn'>
+          <img src={searchIcon} alt="Search" className='searchIcon'/>
+        </button> */}
       </div>
-    )
+
+      <>
+        {filteredProducts().length === 0
+          ? <p className='noProductsContainer'>NO PRODUCTS FOUND</p>
+          : 
+          <div className='productListContainer'>
+            <ProductList products= {filteredProducts()} />
+          </div>
+        }
+      </>
+      
+    </div>
+  )
 }
 
 export default App;
