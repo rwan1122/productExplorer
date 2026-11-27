@@ -71,17 +71,13 @@ function App() {
     );
   };
 
-  function filteredProducts(){
-    if(searchQuery === ''){
-      return products;
-    }
 
-    const filtProducts = products.filter((product) => product.title.toLocaleLowerCase().includes(searchQuery.trim().toLocaleLowerCase()));
+  const normalizedSearchQuery = searchQuery.trim().toLowerCase();
 
+  const filteredProducts = normalizedSearchQuery === ''
+  ? products 
+  : products.filter((product) => product.title.toLowerCase().includes(normalizedSearchQuery));
 
-    return filtProducts;
-  }
-        
 
   return (
     <div className='appContainer'>
@@ -100,11 +96,11 @@ function App() {
       </div>
 
       <>
-        {filteredProducts().length === 0
+        {filteredProducts.length === 0
           ? <p className='noProductsContainer'>NO PRODUCTS FOUND</p>
           : 
           <div className='productListContainer'>
-            <ProductList products= {filteredProducts()} />
+            <ProductList products={filteredProducts} />
           </div>
         }
       </>
