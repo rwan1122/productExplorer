@@ -120,6 +120,12 @@ function App() {
         </select>
       </div>
 
+      <div className='resultsCountContainer'>
+        <p className='resultsCount'>
+          Showing {sortedProducts.length} products
+        </p>
+      </div>
+
       <>
         {filteredProducts.length === 0
           ? <p className='noProductsContainer'>NO PRODUCTS FOUND</p>

@@ -66,6 +66,17 @@
 
 
 
+.resultsCountContainer{
+  max-width: 1200px;
+  margin: auto;
+}
+
+.resultsCount{
+  color: #c5acb1;
+}
+
+
+
 .productListContainer{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -76,8 +87,7 @@
 }
 
 .noProductsContainer{
-  /* color: rgb(156, 156, 156); */
-  color: #d6a3ac;
+  color: #c5acb1;
   font-size: 20px;
   text-align: center;
   margin-top: 200px;
