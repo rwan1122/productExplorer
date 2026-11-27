@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ProductList } from './components/ProductList.jsx';
 import { fetchProducts } from './api/products.js';
-// import { products } from './data/products.js';
-// import searchIcon from './assets/searchIcon.svg';
 import './App.css';
 
 
@@ -12,6 +10,7 @@ function App() {
   const [errorMessage, setErrorMessage] = useState('');
   const [retryCount, setRetryCount] = useState(0);
   const [searchQuery, setSearchQuery] = useState('');
+  const [sortOption, setSortOption] = useState('');
     
   useEffect(() => {
     let ignore = false;
@@ -78,6 +77,16 @@ function App() {
   ? products 
   : products.filter((product) => product.title.toLowerCase().includes(normalizedSearchQuery));
 
+  let sortedProducts = [...filteredProducts];
+  sortedProducts = sortOption === 'name-asc'
+  ? sortedProducts.sort(function(a, b){
+      return a.title.toLowerCase().localeCompare(b.title.toLowerCase());
+    })
+  : sortOption === 'price-asc'
+  ? sortedProducts.sort((a, b) => a.price - b.price)
+  : sortOption === 'price-desc'
+  ? sortedProducts.sort((a, b) => b.price - a.price)
+  : sortedProducts;
 
   return (
     <div className='appContainer'>
@@ -95,9 +104,20 @@ function App() {
           setSearchQuery(event.target.value)
         }}
         />
-        {/* <button type='button' className='searchBtn'>
-          <img src={searchIcon} alt="Search" className='searchIcon'/>
-        </button> */}
+
+        <select 
+        value={sortOption}
+        onChange = {((event) => {
+          setSortOption(event.target.value)
+        })}
+        aria-label='Sort products'
+        className='selectSortContainer'
+        >
+          <option value=''>Default order</option>
+          <option value="name-asc">Name: A to Z</option>
+          <option value="price-asc">Price: Low to high</option>
+          <option value="price-desc">Price: High to low</option>
+        </select>
       </div>
 
       <>
@@ -105,7 +125,7 @@ function App() {
           ? <p className='noProductsContainer'>NO PRODUCTS FOUND</p>
           : 
           <div className='productListContainer'>
-            <ProductList products={filteredProducts} />
+            <ProductList products={sortedProducts} />
           </div>
         }
       </>

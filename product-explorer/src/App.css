@@ -16,6 +16,8 @@
   width: 70%;
   margin: 20px auto;
   display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .searchInput{
@@ -24,22 +26,45 @@
   border: none;
   outline: none;
   background-color: #f3ebed;
-  width: 95%;
+  width: 80%;
   font-size: 17px;
   font-family: Fredoka;
 }
 
-/* .searchBtn{
-  background-color: #bbadb0;
-  border: none ;
-  outline: none ;
-  border-radius: 0 10px 10px 0;
+.selectSortContainer{
+  appearance: base-select;
+  margin: 10px auto;
+  width: 200px;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
   cursor: pointer;
-  
 }
-.searchIcon{
-  padding: 7px;
-} */
+
+.selectSortContainer::picker(select){
+  appearance: base-select;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1)
+}
+
+.selectSortContainer option {
+  padding: 10px 12px;
+  border-radius: 6px;
+  color: #333;
+}
+
+.selectSortContainer option:hover {
+  background-color: #d8caccd5;
+  color: #85676d;
+}
+
+
 
 .productListContainer{
   display: grid;
@@ -56,4 +81,16 @@
   font-size: 20px;
   text-align: center;
   margin-top: 200px;
+}
+
+@media(max-width: 500px){
+  .searchBoxContainer{
+    width: 85%;
+  }
+}
+
+@media(max-width: 950px){
+  .searchInput{
+    width: 100%;
+  }
 }
