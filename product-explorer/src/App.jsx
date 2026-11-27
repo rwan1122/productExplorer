@@ -96,14 +96,20 @@ function App() {
       </header>
 
       <div className='searchBoxContainer'>
-        <input type='text'
-        className='searchInput' 
-        placeholder='Product Name' 
-        value={searchQuery}
-        onChange={(event) => {
-          setSearchQuery(event.target.value)
-        }}
-        />
+        <label 
+          htmlFor='search-input' 
+          className='searchLabel'>
+          Search products
+
+          <input id='search-input' 
+          type='search'
+          className='searchInput' 
+          placeholder='Enter product Name' 
+          value={searchQuery}
+          onChange={(event) => {
+            setSearchQuery(event.target.value)
+          }}/>
+        </label>
 
         <select 
         value={sortOption}

@@ -13,11 +13,20 @@
 }
 
 .searchBoxContainer{
-  width: 70%;
   margin: 20px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.searchLabel{
+  width: 70%;
+  font-size: 17px;
+  font-family: Fredoka; 
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .searchInput{
@@ -28,6 +37,7 @@
   background-color: #f3ebed;
   width: 80%;
   font-size: 17px;
+  margin-left: 15px;
   font-family: Fredoka;
 }
 
@@ -101,14 +111,28 @@
   color: gray;
 }
 
-@media(max-width: 500px){
-  .searchBoxContainer{
+
+
+@media(max-width: 1030px){
+  .searchLabel{
     width: 85%;
   }
 }
 
-@media(max-width: 950px){
+@media(max-width: 850px){
   .searchInput{
     width: 100%;
   }
+
+  .searchLabel{
+    flex-direction: column;
+    gap: 10px;
+  }
 }
+
+@media(max-width: 360px){
+  .searchLabel{
+    width: 100%;
+  }
+}
+
