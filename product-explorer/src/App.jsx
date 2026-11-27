@@ -128,7 +128,14 @@ function App() {
 
       <>
         {filteredProducts.length === 0
-          ? <p className='noProductsContainer'>NO PRODUCTS FOUND</p>
+          ? <div className='noProductsMsgContainer'>
+              <h2 className='noProductsMsg'>
+                NO PRODUCTS FOUND
+              </h2>
+              <p className='noProductsMsgDescription'>
+                Try a different product name or change the sorting option
+              </p>
+            </div>
           : 
           <div className='productListContainer'>
             <ProductList products={sortedProducts} />

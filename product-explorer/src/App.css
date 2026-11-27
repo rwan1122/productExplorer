@@ -69,6 +69,7 @@
 .resultsCountContainer{
   max-width: 1200px;
   margin: auto;
+  padding: 0 15px;
 }
 
 .resultsCount{
@@ -86,11 +87,18 @@
   max-width: 1200px;
 }
 
-.noProductsContainer{
+.noProductsMsgContainer{
+  text-align: center;
+  margin-top: 150px;
+}
+.noProductsMsg{
   color: #c5acb1;
   font-size: 20px;
-  text-align: center;
-  margin-top: 200px;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+.noProductsMsgDescription{
+  color: gray;
 }
 
 @media(max-width: 500px){
