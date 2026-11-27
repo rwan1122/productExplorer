@@ -81,6 +81,11 @@ function App() {
 
   return (
     <div className='appContainer'>
+      <header className='appHeader'>
+        <h1 className='appTitle'>Product Explorer</h1>
+        <p className='appDescription'>Browse products and search by name.</p>
+      </header>
+
       <div className='searchBoxContainer'>
         <input type='text'
         className='searchInput' 

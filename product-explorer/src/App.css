@@ -1,3 +1,17 @@
+.appHeader{
+  text-align: center;
+  margin: 50px 0;
+}
+
+.appTitle{
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.appDescription{
+  color: #d6a3ac;
+}
+
 .searchBoxContainer{
   width: 70%;
   margin: 20px auto;
@@ -12,6 +26,7 @@
   background-color: #f3ebed;
   width: 95%;
   font-size: 17px;
+  font-family: Fredoka;
 }
 
 /* .searchBtn{
@@ -36,7 +51,8 @@
 }
 
 .noProductsContainer{
-  color: rgb(156, 156, 156);
+  /* color: rgb(156, 156, 156); */
+  color: #d6a3ac;
   font-size: 20px;
   text-align: center;
   margin-top: 200px;
