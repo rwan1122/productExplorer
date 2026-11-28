@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ProductList } from './components/ProductList.jsx';
 import { fetchProducts } from './api/products.js';
+import clearIcon from './assets/clearIcon.svg';
 import './App.css';
 
 
@@ -46,6 +47,10 @@ function App() {
     setErrorMessage('');
     setIsLoading(true);
     setRetryCount((count) => count + 1)
+  }
+
+  function handleClearSearch(){
+    setSearchQuery('')
   }
   
   if(isLoading){
@@ -100,15 +105,21 @@ function App() {
           htmlFor='search-input' 
           className='searchLabel'>
           Search products
-
-          <input id='search-input' 
-          type='search'
-          className='searchInput' 
-          placeholder='Enter product Name' 
-          value={searchQuery}
-          onChange={(event) => {
-            setSearchQuery(event.target.value)
-          }}/>
+          <div className='searchInputContainer'>
+            <input id='search-input' 
+            type='search'
+            className='searchInput' 
+            placeholder='Enter product Name' 
+            value={searchQuery}
+            onChange={(event) => {
+              setSearchQuery(event.target.value)
+            }}/>
+            {searchQuery && (
+              <button type='button' className='clearSearchBtn' onClick={handleClearSearch}>
+                <img src={clearIcon}/>
+              </button>
+            )}
+          </div>
         </label>
 
         <select 

@@ -29,17 +29,33 @@
   justify-content: space-between;
 }
 
+.searchInputContainer{
+  width: 80%;
+  display: flex;
+  background-color: #f3ebed;
+  border-radius: 10px;
+}
 .searchInput{
   padding: 10px 20px;
   border-radius: 10px;
   border: none;
   outline: none;
   background-color: #f3ebed;
-  width: 80%;
+  flex: 1;
   font-size: 17px;
   margin-left: 15px;
   font-family: Fredoka;
 }
+
+.clearSearchBtn{
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 10px 15px;
+  background-color: #f3ebed;
+}
+
 
 .selectSortContainer{
   appearance: base-select;
@@ -120,7 +136,7 @@
 }
 
 @media(max-width: 850px){
-  .searchInput{
+  .searchInputContainer{
     width: 100%;
   }
 
